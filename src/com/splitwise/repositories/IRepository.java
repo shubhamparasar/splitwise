@@ -8,9 +8,9 @@ import java.util.Optional;
 public interface IRepository<E, Id> {
     public void create(E obj);// create
 
-    public Optional<User> findById(Id id); // read
+    public Optional<E> findById(Id id); // read
 
-    public List<User> findAll(); // read
+    public List<E> findAll(); // read
 
     public void Save(E obj); // update
 

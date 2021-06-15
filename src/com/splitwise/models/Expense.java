@@ -3,16 +3,37 @@ package com.splitwise.models;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class Expense extends Auditable {
     private String description;
-    private List<User> participants;
+    private Set<User> participants;
     private Double totalAmount;
     private Date date;
     private Boolean isSettled;
     private Map<User,Double> paidAmount;
     private Map<User,Double> owedAmount;
 
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
+    }
+
+    private Group group;
+
+    public Expense(Date date, String description,Set<User> participants){
+        this.date=date;
+        this.description=description;
+        this.participants=participants;
+    }
+    public Expense(String description,Date date,Set<User> participants){
+        this.description=description;
+        this.date=date;
+        this.participants=participants;
+    }
     public String getDescription() {
         return description;
     }
@@ -21,11 +42,11 @@ public class Expense extends Auditable {
         this.description = description;
     }
 
-    public List<User> getParticipants() {
+    public Set<User> getParticipants() {
         return participants;
     }
 
-    public void setParticipants(List<User> participants) {
+    public void setParticipants(Set<User> participants) {
         this.participants = participants;
     }
 

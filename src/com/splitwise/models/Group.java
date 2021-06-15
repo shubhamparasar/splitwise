@@ -1,11 +1,12 @@
 package com.splitwise.models;
 
 import java.util.List;
+import java.util.Set;
 
 public class Group extends Auditable{
     private String name;
     private User admin;
-    private List<User> members;
+    private Set<User> members;
     private List<Expense> expenses;
 
     public String getName() {
@@ -24,11 +25,11 @@ public class Group extends Auditable{
         this.admin = admin;
     }
 
-    public List<User> getMembers() {
+    public Set<User> getMembers() {
         return members;
     }
 
-    public void setMembers(List<User> members) {
+    public void setMembers(Set<User> members) {
         this.members = members;
     }
 
